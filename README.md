@@ -11,3 +11,12 @@ The terraform creates:
 - SNS topic + subscription (currently just to me)
 - Cloudwatch event rule for triggering Lambda
 
+## Why not put this on the demo team?
+- There are things we care about that they don't (like custom saved queries)
+- The back end team is working to keep things up to date. SEs though need to know proactively before our demos.
+
+
+## What's next? 
+- More tests
+- Cleaning up the code to make it friendlier for others to use
+- Better integrations (Slack?)
