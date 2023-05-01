@@ -22,9 +22,12 @@ data "aws_iam_policy_document" "policy" {
   }
 }
 
-data "aws_iam_policy_document" "sns_publish_policy" {
+data "aws_iam_policy_document" "sns_publish_policy_and_cloudwatch" {
     statement {
-      actions   = ["sns:Publish"]
+      actions   = ["sns:Publish",
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents"]
       resources = ["*"]
       effect = "Allow"
     }
@@ -33,7 +36,7 @@ data "aws_iam_policy_document" "sns_publish_policy" {
 resource "aws_iam_policy" "policy" {
     name        = "lambda_sns_publish"
     description = "publish sns messages"
-    policy      = data.aws_iam_policy_document.sns_publish_policy.json
+    policy      = data.aws_iam_policy_document.sns_publish_policy_and_cloudwatch.json
   }
 
 resource "aws_iam_role" "demo_checker_execution_role" {
