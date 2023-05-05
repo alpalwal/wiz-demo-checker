@@ -71,12 +71,12 @@ def test(query_wiz_api):
 
     # This is what we expect to see for issues on SB
     required_issues = [
-        "Publicly exposed resource with high/critical severity network vulnerability with a known exploit and cleartext cloud keys with data access to sensitive data",
-        "Publicly exposed VM/serverless with a high/critical severity network vulnerability with a known exploit and data access to sensitive data",
-        "Publicly exposed VM with a high/critical severity network vulnerability with a known exploit and sensitive data",
-        "Publicly exposed VM instance with effective global admin permissions",
-        "Critical/High network vulnerability with a known exploit found on a publicly exposed VM instance with high permissions",
-        "Publicly facing VM instance with data access to sensitive data and high/critical severity network vulnerability with a known exploit"
+        "Publicly exposed resource with high/critical severity network vulnerability with a known exploit and cleartext cloud keys with data access to sensitive data\n",
+        "Publicly exposed VM/serverless with a high/critical severity network vulnerability with a known exploit and data access to sensitive data\n",
+        "Publicly exposed VM with a high/critical severity network vulnerability with a known exploit and sensitive data\n",
+        "Publicly exposed VM instance with effective global admin permissions\n",
+        "Critical/High network vulnerability with a known exploit found on a publicly exposed VM instance with high permissions\n",
+        "Publicly facing VM instance with data access to sensitive data and high/critical severity network vulnerability with a known exploit\n"
     ]
 
     print("\n====Look for proper SB issues====\n")
@@ -88,7 +88,7 @@ def test(query_wiz_api):
                 matched_issue = True 
                 continue
         if matched_issue == False:
-            message = "Failed to find expected issue on SB instance:\n" + required_issue
+            message = "====Failed to find expected issue on SB instance:====\n" + required_issue
             print(message)
     
     try:

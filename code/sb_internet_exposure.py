@@ -140,7 +140,7 @@ def test(query_wiz_api):
     results_count = len(result['data']['graphSearch']['nodes'])
 
     if results_count == 0:
-        message = ("\nCHECK FAILED: No app endpoints found on SB \nhttps://demo.wiz.io/graph#~(query~(type~(~'VIRTUAL_MACHINE)~select~true~where~(name~(CONTAINS~(~'SB)))~relationships~(~(type~(~(type~'SERVES))~with~(type~(~'ENDPOINT)~select~true)))))\n")    
+        message = ("\n====CHECK FAILED: No app endpoints found on SB==== \nhttps://demo.wiz.io/graph#~(query~(type~(~'VIRTUAL_MACHINE)~select~true~where~(name~(CONTAINS~(~'SB)))~relationships~(~(type~(~(type~'SERVES))~with~(type~(~'ENDPOINT)~select~true)))))\n")    
         print(message) 
     else:           
         print("SB has mongo running, a lateral movement finding, and a guard duty finding")
