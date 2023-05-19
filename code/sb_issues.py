@@ -8,7 +8,8 @@ def test(query_wiz_api):
             "CRITICAL"
             ],
             "status": [
-            "OPEN",
+                "OPEN",
+                "IN_PROGRESS"
             ],
             "relatedEntity": {}
         },
