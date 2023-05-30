@@ -71,15 +71,25 @@ resource "aws_sns_topic" "demo_issue_topic" {
     name = "demo_issue_topic"
   }
 
-resource "aws_sns_topic_subscription" "demo_issue_topic_subscription" {
+resource "aws_sns_topic_subscription" "demo_issue_topic_subscription1" {
   topic_arn = resource.aws_sns_topic.demo_issue_topic.arn
   protocol  = "email"
   endpoint  = "alex@wiz.io"
 }
+resource "aws_sns_topic_subscription" "demo_issue_topic_subscription2" {
+  topic_arn = resource.aws_sns_topic.demo_issue_topic.arn
+  protocol  = "email"
+  endpoint  = "jeff.morgan@wiz.io"
+}
+resource "aws_sns_topic_subscription" "demo_issue_topic_subscription3" {
+  topic_arn = resource.aws_sns_topic.demo_issue_topic.arn
+  protocol  = "email"
+  endpoint  = "bryan.mcclellan@wiz.io"
+}
 
 resource "aws_cloudwatch_event_rule" "demo_checker_lambda_event_rule" {
     name = "profile-generator-lambda-event-rule"
-    description = "retry scheduled every 20 min"
+    description = "retry scheduled every 30 min"
     schedule_expression = "rate(30 minutes)"
   }
   
