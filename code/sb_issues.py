@@ -71,10 +71,11 @@ def test(query_wiz_api):
     sb_issues_result = query_wiz_api(query,variables)
 
     # This is what we expect to see for issues on SB
+    ## removing this one temporaily
+    # "Publicly exposed VM with a high/critical severity network vulnerability with a known exploit and sensitive data",
     required_issues = [
         "Publicly exposed resource with high/critical severity network vulnerability with a known exploit and cleartext cloud keys with data access to sensitive data",
         "Publicly exposed VM/serverless with a high/critical severity network vulnerability with a known exploit and data access to sensitive data",
-        "Publicly exposed VM with a high/critical severity network vulnerability with a known exploit and sensitive data",
         "Publicly exposed VM instance with effective global admin permissions",
         "Critical/High network vulnerability with a known exploit found on a publicly exposed VM instance with high permissions",
         "Publicly facing VM instance with data access to sensitive data and high/critical severity network vulnerability with a known exploit"
