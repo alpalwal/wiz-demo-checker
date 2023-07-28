@@ -74,9 +74,9 @@ def test(query_wiz_api):
     ## removing these temporaily
     # "Publicly exposed VM with a high/critical severity network vulnerability with a known exploit and sensitive data",
     # "Publicly facing VM instance with data access to sensitive data and high/critical severity network vulnerability with a known exploit",
+    # "Publicly exposed VM instance with effective global admin permissions",
     required_issues = [
         "Publicly exposed resource with high/critical severity network vulnerability with a known exploit and cleartext cloud keys with data access to sensitive data",
-        "Publicly exposed VM instance with effective global admin permissions",
         "Publicly exposed VM with high privileges and high/critical severity network vulnerabilities with a known exploit",
         "Publicly exposed VM/serverless with a high/critical severity network vulnerability with a known exploit and data access to sensitive data"
     ]
